@@ -5,5 +5,7 @@ a) Kohdassa asensimme koneelle typora-editorin, jolla pystyy kirjoittamaan .md t
 Typoran asennusohjeet löytyvät osoitteessa: https://typora.io/#linux
 
 b) **git log**- komento näyttää loki-tiedoston, joka kertoo tekemistäni muutoksista. (Esim luodut tiedostot)
-    **git diff**- komento näyttää tiedostojen sisällä tehdyt muutokset.
-    **git blame**- 
+
+**git diff**- komento näyttää tiedostojen sisällä tehdyt muutokset.
+
+**git blame**- komento kertoo kuka, milloin ja miksi teki muutoksia tiedostoon, riviin yms. 
