@@ -18,19 +18,33 @@ Asennus alkoi päivityksellä **sudo apt-get update**
 
 Seuraavaksi asensin fail2banin komennolla: **sudo apt-get install -y fail2ban**
 
-Sen jälkeen siirryttiin hakemistoon **/etc/fail2ban** josta kopioin tiedoston **jail.conf** ja nimesin sen nimellä **jail.local** , tämä siitä syystä, että päivitys muuttaa jail.conffin tiedostoja.
+Sen jälkeen siirryttiin hakemistoon **/etc/fail2ban** josta kopioin tiedoston 
 
-Seuraavaksi loin polkuun **srv/salt/** uuden kansion fail2ban, jonka sisään kopioin **jail.local** tiedoston.
+**jail.conf** ja nimesin sen nimellä **jail.local** , tämä siitä syystä, että päivitys 
+
+muuttaa jail.conffin tiedostoja.
+
+Seuraavaksi loin polkuun **srv/salt/** uuden kansion fail2ban, jonka sisään kopioin 
+
+**jail.local** tiedoston.
 
 Sitten loin **fail2ban.sls** tiedoston, johon kirjoitin sisään seuraavat tiedot:
+
 fail2ban:
   pkg.installed
+
 /etc/fail2ban/jail.local:
+
   file.managed:  
+
 -source: salt://fail2ban/jail.conf
+
 fail2banservice:
+
 service.running:
+
 -name:
+
 -file: //etc/fail2ban/jail.local
 
 (välilyönnit eivät täsmää oikein)
